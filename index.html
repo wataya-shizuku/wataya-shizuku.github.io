@@ -3,9 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>綿谷雫のホームページ</title>
+  <style>
+    body {
+      background-color: #fffaf4; /* クリーム色の背景 */
+      font-family: "MS PGothic", sans-serif; /* レトロ感のあるフォント */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #ffecec;
+      padding: 10px;
+      border-right: 2px solid #ffb6c1;
+    }
+
+    .content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d87093;
+    }
+
+    a {
+      display: block;
+      margin: 8px 0;
+      color: #d87093;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
   <h1>綿谷雫のホームページ</h1>
-  <p>ようこそ。</p>
+
+  <div class="container">
+    <div class="sidebar">
+      <a href="#">トップ</a>
+      <a href="#">小説</a>
+      <a href="#">絵</a>
+      <a href="#">月記</a>
+      <a href="#">リンク</a>
+    </div>
+
+    <div class="content">
+      <p>ようこそ。ここは綿谷雫の創作サイトです。</p>
+      <p>小説、絵、月記などを置いていきます。</p>
+    </div>
+  </div>
 </body>
 </html>

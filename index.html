@@ -3,78 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <title>綿谷雫のホームページ</title>
+
   <style>
     body {
-      background-color: #e8f6ff; /* 淡い水色（空色） */
+      background-color: #e8f6ff; /* 淡い水色 */
       font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
       margin: 0;
       padding: 0;
-      color: #2f4f4f; /* 落ち着いた墨色 */
+      color: #2f4f4f;
     }
 
-    .container {
-      display: flex;
+    /* メニューボタン */
+    .menu-button {
+      background-color: #e6f4e6; /* 若草色 */
+      padding: 8px 12px;
+      border: 1px solid #bcd9bc;
+      width: 100px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+      color: #4f9da6; /* 浅葱色 */
+      font-size: 14px;
     }
 
+    /* サイドバー */
     .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 180px;
-      background-color: #e6f4e6; /* 若草色の淡い背景 */
-      padding: 12px;
-      border-right: 2px solid #bcd9bc; /* 和紙っぽい薄緑の線 */
+      height: 100%;
+      background-color: #e6f4e6;
+      border-right: 2px solid #bcd9bc;
+      padding: 15px;
+      transition: transform 0.3s ease;
+      z-index: 1000;
     }
 
-    .content {
-      padding: 20px;
-      flex-grow: 1;
+    .hidden {
+      transform: translateX(-200px);
     }
 
-    h1 {
-      text-align: center;
-      color: #4f9da6; /* 浅葱色（和風の青緑） */
-      margin-top: 20px;
-      margin-bottom: 20px;
-      font-weight: normal;
-    }
-
-    a {
+    .sidebar a {
       display: block;
       margin: 10px 0;
-      color: #4f9da6; /* 浅葱色 */
+      color: #4f9da6;
       text-decoration: none;
       font-size: 15px;
     }
 
-    a:hover {
+    .sidebar a:hover {
       text-decoration: underline;
     }
 
-    .box {
-      background: #ffffffcc; /* 半透明の白で和紙っぽさ */
-      padding: 15px;
+    /* メインコンテンツ */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #ffffffcc; /* 和紙っぽい半透明の白 */
+      padding: 20px;
       border: 1px solid #d0dcdc;
-      border-radius: 6px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4f9da6; /* 浅葱色 */
+      font-weight: normal;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 
 <body>
-  <h1>綿谷雫のホームページ</h1>
 
-  <div class="container">
-    <div class="sidebar">
-      <a href="#">トップ</a>
-      <a href="novel.html">小説</a>
-      <a href="#">絵</a>
-      <a href="#">月記</a>
-      <a href="#">リンク</a>
-    </div>
+  <!-- メニュー -->
+  <div class="menu-button" onclick="toggleMenu()">☰ メニュー</div>
 
-    <div class="content">
-      <div class="box">
-        <p>綿谷雫の創作サイトです。</p>
-        <p>小説、絵などを置いていきます。</p>
-      </div>
-    </div>
+  <div id="sidebar" class="sidebar hidden">
+    <a href="index.html">トップ</a>
+    <a href="novel.html">小説</a>
+    <a href="picture.html">絵</a>
+    <a href="article.html">月記</a>
+    <a href="links.html">リンク</a>
   </div>
+
+  <!-- メイン -->
+  <div class="container">
+    <h1>綿谷雫のホームページ</h1>
+
+    <p>ようこそ。ここは綿谷雫の創作サイトです。</p>
+    <p>小説、絵、月記などを置いていきます。</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("hidden");
+    }
+  </script>
+
 </body>
 </html>
